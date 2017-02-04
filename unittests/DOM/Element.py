@@ -16,12 +16,12 @@ class ElementTest(TestCase):
         doc = Document()
         one = doc.createElement('one')
         one.setAttribute('foo', 'bar')
-        assert list(one.attributes.keys()) == ['foo']
+        assert one.attributes.keys() == ['foo']
         assert one.getAttribute('foo') == 'bar'
         assert one.getAttribute('aoeu') is None
         assert one.removeAttribute('aoeu') is None
         assert one.removeAttribute('foo') is None
-        assert list(one.attributes.keys()) == []
+        assert one.attributes.keys() == []
 
     def testHasAttribute(self):
         doc = Document()
